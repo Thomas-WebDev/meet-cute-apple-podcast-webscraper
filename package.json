@@ -1,0 +1,29 @@
+{
+  "name": "applereporterapi",
+  "version": "1.0.0",
+  "description": "apple report api",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apple-reporter": "^2.2.1",
+    "body-parser": "^1.15.0",
+    "chai": "^4.3.4",
+    "chai-as-promised": "^7.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.14.0",
+    "git": "^0.1.5",
+    "google-auth-library": "^7.10.2",
+    "googleapis": "^91.0.0",
+    "node-cron": "^3.0.0",
+    "nodemon": "^2.0.14",
+    "path": "^0.12.7",
+    "pm2": "^5.1.2",
+    "puppeteer": "^11.0.0",
+    "sinon": "^12.0.1",
+    "zlib": "^1.0.5"
+  }
+}

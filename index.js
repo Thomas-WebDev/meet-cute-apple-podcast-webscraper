@@ -13,7 +13,20 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/', async (req, res, next) => { 
+app.use('/apple/', async (req, res, next) => { 
+    try {
+        res.status(200).json("Functioning");
+    } catch (err) {
+        if (!err.statusCode) {
+            err.statusCode = 500;
+        }
+        await browser.close();
+        next(err);
+    }
+}
+
+
+app.use('/apple/', async (req, res, next) => { 
     var data = [];
     console.log(req.query);
     const APPLE_USER_ID = req.query.username;
@@ -21,7 +34,8 @@ app.use('/', async (req, res, next) => {
     let url = "https://podcastsconnect.apple.com";
     let browser = await puppeteer.launch({ 
         args: [
-            '--window-size=1920,1080',
+            '--no-sandbox',
+            '--window-size=1920,1080'
         ],                                                                                                                                                                                                                 
         headless: false,
         defaultViewport: null 
